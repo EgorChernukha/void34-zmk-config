@@ -74,15 +74,46 @@
         release-after-ms = <60000>;
 };
 
+&mt {
+    quick-tap-ms = <180>;
+    flavor = "tap-preferred";
+    require-prior-idle-ms = <125>;
+};
+
 / {
     behaviors {
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <125>;
+            tapping-term-ms = <180>;
+            quick-tap-ms = <150>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = < 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 >;
+            hold-trigger-on-release;
+        };
+
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <125>;
+            tapping-term-ms = <180>;
+            quick-tap-ms = <150>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = < 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 34 35 >;
+            hold-trigger-on-release;
+        };
+
         MACRO_ONE_PARAM(
             m_release_key_twice,
             &macro_release
                 &macro_param_1to1 &kp PARAM_1
                 &macro_param_1to1 &kp PARAM_1
         )
-
 
         MACRO_ONE_PARAM(
             m_press_key_twice,
@@ -191,10 +222,10 @@
 
         def_layer {
             bindings = <
-_ Q          _ W          _ E          _ R         _ T             _ Y          _ U          _ I          _ O          _ P
-_ A          _ S          _ D          _ F         _ G             _ H          _ J          _ K          _ L          _ SEMI
-_ Z          _ X          _ C          _ V         _ B             _ N          _ M          _ COMMA      _ DOT        _ FSLH
-                          _ CAPS       _ SPACE     &la NAV         &la SYM      _ LSFT       _ RALT
+_ Q             _ W             _ E             _ R             _ T             _ Y          _ U            _ I             _ O             _ P
+&hml LALT A     &hml LCTRL S    &hml LCMD D     &hml LSHFT F    _ G             _ H          &hmr LSHFT J   &hmr LCMD K     &hmr LCTRL L    &hmr LALT SEMI
+_ Z             _ X             _ C             _ V             _ B             _ N          _ M            _ COMMA         _ DOT           _ FSLH
+                                _ CAPS          _ SPACE         &la NAV         &la SYM      _ LSFT         _ RALT
             >;
         };
 
