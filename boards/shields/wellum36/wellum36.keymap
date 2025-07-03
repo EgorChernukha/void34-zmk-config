@@ -186,14 +186,6 @@
             MOD_LGUI
         )
 
-        MODMORPH(
-            swapper_lng,
-            &m_hold_mod_press_key LALT LSHFT,
-            &kp LSHFT,
-            MOD_LALT,
-            MOD_LALT
-        )
-
         MACRO_ONE_PARAM(
             la,
             &macro_tap
@@ -228,7 +220,7 @@
 _ Q             _ W             _ E             _ R             _ T             _ Y          _ U            _ I             _ O             _ P
 &hml LALT A     &hml LCTRL S    &hml LCMD D     &hml LSHFT F    _ G             _ H          &hmr LSHFT J   &hmr LCMD K     &hmr LCTRL L    &hmr LALT SEMI
 _ Z             _ X             _ C             _ V             _ B             _ N          _ M            _ COMMA         _ DOT           _ FSLH
-                                &swapper_lng    _ SPACE         &la NAV         &la SYM      _ LSFT         &mo ALT
+                                _ CAPS          _ SPACE         &la NAV         &la SYM      _ LSFT         &mo ALT
             >;
         };
 
