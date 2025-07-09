@@ -23,7 +23,7 @@
 
         base_layer {
             bindings = <
-&kp Q       &kp W       &kp E        &kp R        &kp T      &kp Y      &kp U        &kp I         &kp O          &kp P
+&mt ESC Q   &kp W       &kp E        &kp R        &kp T      &kp Y      &kp U        &kp I         &kp O          &kp P
 &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G      &kp H      &mt LSHFT J  &mt LCTRL K   &mt LALT L     &mt LGUI SEMICOLON
 &kp Z       &kp X       &kp C        &kp V        &kp B      &kp N      &kp M        &kp COMMA     &kp DOT        &kp SLASH
                                      &kp DELETE   &lt 1 TAB  &kp ENTER  &kp SPACE    &lt 2 ESCAPE  &kp BACKSPACE
